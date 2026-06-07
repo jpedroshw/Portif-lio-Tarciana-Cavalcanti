@@ -18,13 +18,16 @@
     <div class="nav-brand"> Tarciana
     <span>Cavalcanti </span>
     </div>
-    <ul class="nav-links">
-      <li><a href="#inicio">Início</a></li>
-      <li><a href="#diferencial">Diferencial</a></li>
-      <li><a href="#trajetoria">Trajetória</a></li>
-      <li><a href="#expertise">Expertise</a></li>
-      <li><a href="#contato">Contato</a></li>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio" onclick="closeMenu()">Início</a></li>
+      <li><a href="#diferencial" onclick="closeMenu()">Diferencial</a></li>
+      <li><a href="#trajetoria" onclick="closeMenu()">Trajetória</a></li>
+      <li><a href="#expertise" onclick="closeMenu()">Expertise</a></li>
+      <li><a href="#contato" onclick="closeMenu()">Contato</a></li>
     </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Abrir menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- ① CAPA / HERO -->
@@ -50,8 +53,8 @@
   <!-- ② DIFERENCIAL -->
   <section id="diferencial">
     <div class="section-inner">
-      <p class="section-label">Por que me contratar</p>
-      <h2 class="section-title">O Diferencial: Por que contratar esta Consultoria?</h2>
+      <p class="section-label">Meu diferencial</p>
+      <h2 class="section-title">Por que contratar esta Consultoria?</h2>
       <div class="divider"></div>
       <div class="cards-grid">
         <div class="card">
@@ -73,11 +76,6 @@
           <div class="card-icon">🏗️</div>
           <h3 class="card-title">Estruturação de RH (Do Zero)</h3>
           <p class="card-text">Organização completa para empresas em crescimento. Casa em ordem para você focar no lucro.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🧠</div>
-          <h3 class="card-title">Saúde no Trabalho</h3>
-          <p class="card-text">Menos faltas e mais engajamento através da Psicologia aplicada ao ambiente da empresa.</p>
         </div>
       </div>
     </div>
@@ -173,10 +171,10 @@
       <p class="cta-frase">"Meu objetivo é que você, empresário, tenha tempo para cuidar da estratégia, enquanto eu cuido do seu maior ativo: as pessoas."</p>
       <p class="cta-chamada">Entre em contato e dê o primeiro passo.</p>
       <div class="contato-links">
-        <a href="https://wa.me/seu-numero" class="contato-btn whatsapp">
+        <a href="https://wa.me/5581986474050" class="contato-btn whatsapp">
           <span>📱</span> WhatsApp
         </a>
-        <a href="https://linkedin.com" target="_blank" class="contato-btn">
+        <a href="https://www.linkedin.com/in/tarciana-cavalcanti-10b76010b/" target="_blank" class="contato-btn">
           <span>💼</span> LinkedIn
         </a>
         <a href="mailto:contato@tarcianacavalcanti.com" class="contato-btn">
@@ -189,6 +187,20 @@
   <footer>
     <p>© 2026 Tarciana Cavalcanti. Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      const btn = document.getElementById('hamburger');
+      const isOpen = nav.classList.toggle('nav-open');
+      btn.classList.toggle('active', isOpen);
+      btn.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+    }
+    function closeMenu() {
+      document.getElementById('navLinks').classList.remove('nav-open');
+      document.getElementById('hamburger').classList.remove('active');
+    }
+  </script>
 
 </body>
 </html>
